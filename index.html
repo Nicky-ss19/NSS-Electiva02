@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Esto es para que se vean bien los acentos y la ñ -->
+  <meta charset="UTF-8">
+  <!-- Y esto es para que la página se adapte al celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hola Mundo | Electiva 2 - DevOps</title>
+
+  <!-- Las letras las saco de Google Fonts: una cursiva para el título y una redondita para el texto -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Mis colores guardados en variables, así si quiero cambiar uno, lo cambio aquí y ya */
+    :root {
+      --negro: #111111;
+      --dorado: #C9A227;
+      --crema: #FBF6EC;
+      --fucsia: #D6336C;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: var(--crema);
+      color: var(--negro);
+    }
+
+    /* La franja negra de arriba, donde va el saludo en dorado */
+    header {
+      background: var(--negro);
+      text-align: center;
+      padding: 40px 20px;
+      border-bottom: 4px solid var(--dorado);
+    }
+
+    header h1 {
+      font-family: 'Dancing Script', cursive;
+      color: var(--dorado);
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    header p {
+      color: var(--crema);
+      margin: 8px 0 0;
+    }
+
+    /* El contenido va centrado y no muy ancho, para que se lea cómodo */
+    main {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    /* Los subtítulos en dorado, con una barrita fucsia al lado */
+    h2 {
+      color: var(--dorado);
+      border-left: 5px solid var(--fucsia);
+      padding-left: 10px;
+    }
+
+    /* Esto es para resaltar los nombres de las ramas */
+    code {
+      background: var(--negro);
+      color: var(--dorado);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- El encabezado con el famoso Hola Mundo -->
+  <header>
+    <h1>¡Hola Mundo! 👋</h1>
+    <p>Práctica 1 · Electiva 2 (DevOps) · ITLA</p>
+  </header>
+
+  <main>
+    <!-- Quién hizo la práctica -->
+    <h2>¿Quién hizo esto?</h2>
+    <p>Yo, Nicole Alejandra Santana Sánchez, matrícula 2025-1213, estudiante de Desarrollo de Software. Profe: Elvis Cruz.</p>
+
+    <!-- De qué trata la práctica -->
+    <h2>¿De qué trata?</h2>
+    <p>De crear mi primer repositorio para esta materia, con dos ramas:</p>
+    <ul>
+      <li><code>main</code> → la rama principal, o sea, la versión estable, la que "sale a producción".</li>
+      <li><code>dev</code> → la rama de desarrollo, donde pruebo los cambios antes de pasarlos a main.</li>
+    </ul>
+
+    <!-- Lo que aprendí en la clase 1 -->
+    <h2>¿Y por qué ramas?</h2>
+    <p>Pues porque así nadie toca la versión buena mientras se trabaja en algo nuevo. Se acabaron los "final", "final real" y "final real v2" 😅</p>
+  </main>
+
+  <footer>Hecho con HTML y CSS por Nicky 💛 · 2026</footer>
+
+</body>
+</html>
