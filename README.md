@@ -27,9 +27,13 @@ La práctica consiste en crear un repositorio público con dos ramas: una princi
 ## ¿Cómo está organizado?
 
 ```
-NSS-Electiva02/
-├── index.html   → la página con el Hola Mundo
-└── README.md    → esto que estás leyendo
+   NSS-Electiva02/
+   ├── .github/
+   │   └── workflows/
+   │       └── alerta.yml   → la integración continua con GitHub Actions
+   ├── hola.js              → el Hola Mundo en JavaScript
+   ├── index.html           → la página con el Hola Mundo
+   └── README.md            → esto que estás leyendo
 ```
 
 ## ¿Cómo lo veo?
@@ -47,3 +51,14 @@ La página está conectada a GitHub Pages desde la rama `main`. O sea, el flujo 
 4. En un minutito, la página nueva ya está en vivo.
 
 Nadie sube archivos a mano a ningún servidor, todo es automático 🙌
+
+## Integración continua con GitHub Actions (Práctica 4) 🔔
+
+Cada vez que llega código a `main`, GitHub Actions ejecuta solito el archivo `.github/workflows/alerta.yml`, que hace esto:
+
+1. Clona el repositorio en una máquina virtual de Ubuntu (el *runner*).
+2. Instala Node.js.
+3. Ejecuta mi Hola Mundo (`hola.js`).
+4. Manda una notificación a [ntfy.sh/devops-itla](https://ntfy.sh/devops-itla) con el mensaje que imprimió el programa.
+
+¿Y por qué es integración continua? Pues porque nadie tiene que correr nada a mano: subo el código y todo pasa solo 🙌

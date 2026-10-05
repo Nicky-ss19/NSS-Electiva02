@@ -1,0 +1,41 @@
+# Mi integración continua para la Práctica 4 de Electiva 2 (DevOps)
+name: Alerta de Integración Continua
+
+# ¿Cuándo se ejecuta? Pues cada vez que llega código a la rama main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  alerta:
+    # La máquina virtual (el "runner") donde GitHub corre todo
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Como el runner empieza vacío, primero hay que clonar el repositorio
+      - name: Clonar el repositorio
+        uses: actions/checkout@v4
+
+      # 2. Instalar Node.js para poder correr JavaScript
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # 3. Ejecutar el Hola Mundo, para comprobar que el programa funciona
+      - name: Ejecutar el Hola Mundo
+        run: node hola.js
+
+      # 4. Mandar la notificación a ntfy con lo que imprimió el programa
+      - name: Enviar notificación a ntfy
+        env:
+          AUTOR: ${{ github.actor }}
+          REPO: ${{ github.repository }}
+        run: |
+          SALIDA=$(node hola.js)
+          curl \
+            -H "Title: Nuevo push a main" \
+            -H "Tags: rocket" \
+            -d "$SALIDA (subido por $AUTOR desde $REPO)" \
+            ntfy.sh/devops-itla
