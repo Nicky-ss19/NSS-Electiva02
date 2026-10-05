@@ -36,3 +36,14 @@ NSS-Electiva02/
 
 Puedes verla en vivo aquí: https://nicky-ss19.github.io/NSS-Electiva02/
 O si prefieres, descarga el repositorio y abre `index.html` en tu navegador.
+
+## ¿Cómo se publica sola? (Práctica 3) 🚀
+
+La página está conectada a GitHub Pages desde la rama `main`. O sea, el flujo es así:
+
+1. Hago los cambios en `dev`.
+2. Los paso a `main` con un Pull Request.
+3. GitHub corre solito el flujo *pages build and deployment*, que se puede ver en la pestaña **Actions**.
+4. En un minutito, la página nueva ya está en vivo.
+
+Nadie sube archivos a mano a ningún servidor, todo es automático 🙌
